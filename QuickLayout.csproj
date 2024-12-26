@@ -198,8 +198,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="PicturesLayoutRibbon.resx">
-      <DependentUpon>PicturesLayoutRibbon.cs</DependentUpon>
+    <EmbeddedResource Include="QuickLayoutRibbon.resx">
+      <DependentUpon>QuickLayoutRibbon.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -209,11 +209,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="PicturesLayoutRibbon.cs">
+    <Compile Include="QuickLayoutRibbon.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="PicturesLayoutRibbon.Designer.cs">
-      <DependentUpon>PicturesLayoutRibbon.cs</DependentUpon>
+    <Compile Include="QuickLayoutRibbon.Designer.cs">
+      <DependentUpon>QuickLayoutRibbon.cs</DependentUpon>
     </Compile>
     <Compile Include="ThisAddIn.cs">
       <SubType>Code</SubType>

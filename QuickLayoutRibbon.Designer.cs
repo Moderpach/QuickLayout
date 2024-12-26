@@ -1,13 +1,13 @@
 ﻿namespace QuickLayout
 {
-    partial class PicturesLayoutRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
+    partial class QuickLayoutRibbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// 必需的设计器变量。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public PicturesLayoutRibbon()
+        public QuickLayoutRibbon()
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
@@ -60,12 +60,12 @@
             this.RestorePicturesSizeButton.Name = "RestorePicturesSizeButton";
             this.RestorePicturesSizeButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.RestorePicturesSizeButton_Click);
             // 
-            // PicturesLayoutRibbon
+            // QuickLayoutRibbon
             // 
-            this.Name = "PicturesLayoutRibbon";
+            this.Name = "QuickLayoutRibbon";
             this.RibbonType = "Microsoft.Word.Document";
             this.Tabs.Add(this.QuickLayoutTab);
-            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.PicturesLayoutRibbonInstance_Load);
+            this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.QuickLayoutRibbonInstance_Load);
             this.QuickLayoutTab.ResumeLayout(false);
             this.QuickLayoutTab.PerformLayout();
             this.PicturesLayouter.ResumeLayout(false);
@@ -83,9 +83,9 @@
 
     partial class ThisRibbonCollection
     {
-        internal PicturesLayoutRibbon PicturesLayoutRibbonInstance
+        internal QuickLayoutRibbon QuickLayoutRibbonInstance
         {
-            get { return this.GetRibbon<PicturesLayoutRibbon>(); }
+            get { return this.GetRibbon<QuickLayoutRibbon>(); }
         }
     }
 }

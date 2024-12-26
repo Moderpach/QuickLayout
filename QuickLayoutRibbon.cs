@@ -10,9 +10,9 @@ using Microsoft.Office.Tools.Word;
 
 namespace QuickLayout
 {
-    public partial class PicturesLayoutRibbon
+    public partial class QuickLayoutRibbon
     {
-        private void PicturesLayoutRibbonInstance_Load(object sender, RibbonUIEventArgs e)
+        private void QuickLayoutRibbonInstance_Load(object sender, RibbonUIEventArgs e)
         {
 
         }
