@@ -58,14 +58,18 @@
             // 
             // RestorePicturesToOriginalSizeButton
             // 
+            this.RestorePicturesToOriginalSizeButton.Image = global::QuickLayout.Properties.Resources.FullSize;
             this.RestorePicturesToOriginalSizeButton.Label = "重置大小";
             this.RestorePicturesToOriginalSizeButton.Name = "RestorePicturesToOriginalSizeButton";
+            this.RestorePicturesToOriginalSizeButton.ShowImage = true;
             this.RestorePicturesToOriginalSizeButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.RestorePicturesSizeButton_Click);
             // 
             // ResizePicturesToFitPageWidthButton
             // 
+            this.ResizePicturesToFitPageWidthButton.Image = global::QuickLayout.Properties.Resources.FitWidth;
             this.ResizePicturesToFitPageWidthButton.Label = "匹配页宽";
             this.ResizePicturesToFitPageWidthButton.Name = "ResizePicturesToFitPageWidthButton";
+            this.ResizePicturesToFitPageWidthButton.ShowImage = true;
             this.ResizePicturesToFitPageWidthButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ResizePicturesToFitPageWidthButton_Click);
             // 
             // QuickLayoutRibbon
