@@ -19,8 +19,14 @@ namespace QuickLayout
 
         private void RestorePicturesSizeButton_Click(object sender, RibbonControlEventArgs e)
         {
-            Debug.WriteLine("The button is clicked!");
-            PicturesUtil.RestorePicturesSize();
+            Debug.WriteLine("[clicked button] RestorePicturesSizeButton");
+            PicturesUtil.RestorePicturesToOriginalSize();
+        }
+
+        private void ResizePicturesToFitPageWidthButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            Debug.WriteLine("[clicked button] ResizePicturesToFitPageWidthButton");
+            PicturesUtil.ResizePicturesToFitPageWidth();
         }
     }
 }

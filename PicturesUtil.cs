@@ -13,10 +13,11 @@ namespace QuickLayout
     internal class PicturesUtil
     {
 
-        public static void RestorePicturesSize()
+        public static void RestorePicturesToOriginalSize()
         {
-            Word.Document document = Globals.ThisAddIn.Application.ActiveDocument;
-            foreach (Word.InlineShape shape in document.InlineShapes)
+            Debug.WriteLine("[PicturesUtil#RestorePicturesToOriginalSize]");
+            Word.Selection selection = Globals.ThisAddIn.Application.Selection;
+            foreach (Word.InlineShape shape in selection.InlineShapes)
             {
                 if (shape.Type == Word.WdInlineShapeType.wdInlineShapePicture)
                 {
@@ -30,7 +31,35 @@ namespace QuickLayout
                 }
 
             }
-            Debug.WriteLine("restore pictures size complete!");
+            Debug.WriteLine("[PicturesUtil#RestorePicturesToOriginalSize] restore pictures size complete");
+        }
+
+        public static void ResizePicturesToFitPageWidth() 
+        {
+            Debug.WriteLine("[PicturesUtil#ResizePicturesToFitPageWidth]");
+
+            Word.Selection selection = Globals.ThisAddIn.Application.Selection;
+            foreach (Word.InlineShape shape in selection.InlineShapes)
+            {
+                if (shape.Type == Word.WdInlineShapeType.wdInlineShapePicture)
+                {
+                    Debug.WriteLine("found a picture");
+                    Office.MsoTriState preLockAspectRatio = shape.LockAspectRatio;
+                    shape.LockAspectRatio = Office.MsoTriState.msoTrue;
+
+                    // get page width without margin
+                    Word.PageSetup pageSetup = shape.Range.PageSetup;
+                    float pageWidth = pageSetup.PageWidth - pageSetup.LeftMargin - pageSetup.RightMargin;
+                    Debug.WriteLine("current page width: ", pageWidth);
+
+                    shape.Width = pageWidth;
+
+                    shape.LockAspectRatio = preLockAspectRatio;
+                    Debug.WriteLine("restore a picture size");
+                }
+
+            }
+            Debug.WriteLine("restore pictures size complete");
         }
     }
 

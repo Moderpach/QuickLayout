@@ -36,7 +36,8 @@
         {
             this.QuickLayoutTab = this.Factory.CreateRibbonTab();
             this.PicturesLayouter = this.Factory.CreateRibbonGroup();
-            this.RestorePicturesSizeButton = this.Factory.CreateRibbonButton();
+            this.RestorePicturesToOriginalSizeButton = this.Factory.CreateRibbonButton();
+            this.ResizePicturesToFitPageWidthButton = this.Factory.CreateRibbonButton();
             this.QuickLayoutTab.SuspendLayout();
             this.PicturesLayouter.SuspendLayout();
             this.SuspendLayout();
@@ -50,15 +51,22 @@
             // 
             // PicturesLayouter
             // 
-            this.PicturesLayouter.Items.Add(this.RestorePicturesSizeButton);
+            this.PicturesLayouter.Items.Add(this.RestorePicturesToOriginalSizeButton);
+            this.PicturesLayouter.Items.Add(this.ResizePicturesToFitPageWidthButton);
             this.PicturesLayouter.Label = "图片";
             this.PicturesLayouter.Name = "PicturesLayouter";
             // 
-            // RestorePicturesSizeButton
+            // RestorePicturesToOriginalSizeButton
             // 
-            this.RestorePicturesSizeButton.Label = "重置图像大小";
-            this.RestorePicturesSizeButton.Name = "RestorePicturesSizeButton";
-            this.RestorePicturesSizeButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.RestorePicturesSizeButton_Click);
+            this.RestorePicturesToOriginalSizeButton.Label = "重置大小";
+            this.RestorePicturesToOriginalSizeButton.Name = "RestorePicturesToOriginalSizeButton";
+            this.RestorePicturesToOriginalSizeButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.RestorePicturesSizeButton_Click);
+            // 
+            // ResizePicturesToFitPageWidthButton
+            // 
+            this.ResizePicturesToFitPageWidthButton.Label = "匹配页宽";
+            this.ResizePicturesToFitPageWidthButton.Name = "ResizePicturesToFitPageWidthButton";
+            this.ResizePicturesToFitPageWidthButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ResizePicturesToFitPageWidthButton_Click);
             // 
             // QuickLayoutRibbon
             // 
@@ -78,7 +86,8 @@
 
         internal Microsoft.Office.Tools.Ribbon.RibbonTab QuickLayoutTab;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup PicturesLayouter;
-        internal Microsoft.Office.Tools.Ribbon.RibbonButton RestorePicturesSizeButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton RestorePicturesToOriginalSizeButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ResizePicturesToFitPageWidthButton;
     }
 
     partial class ThisRibbonCollection
